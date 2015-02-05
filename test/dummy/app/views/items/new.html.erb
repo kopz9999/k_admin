@@ -1,0 +1,16 @@
+<%= render partial: 'content_helper' %>
+
+<% content_for :page_title do %>
+  <%= display_title "New Item" do %>
+    <%= display_title_link items_path, "backward", "Back" %>
+  <% end %>
+<% end %>
+
+<%= display_panel do %>
+  <%= display_row_block do %>
+
+    <%= render 'form' %>
+
+  <% end %>
+
+<% end %>

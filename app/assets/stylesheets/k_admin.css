@@ -1,0 +1,24 @@
+/*
+ *= require k_admin/jquery-ui-1.10.4.custom.min.css
+ *= require k_admin/font-awesome.min.scss
+ *= require k_admin/bootstrap/bootstrap.min.css
+ *= require k_admin/animate.css
+ *= require k_admin/all.css
+ *= require k_admin/main.css
+ *= require k_admin/style-responsive.css
+ *= require k_admin/zabuto_calendar.min.css
+ *= require k_admin/pace.css
+ *= require k_admin/jquery.news-ticker.css
+*/
+
+a.chat-form-close.pull-right:hover, a.chat-box-close.pull-right{
+  background-color: transparent;
+}
+
+span.logo-text img {
+  margin-top: -10px;
+}
+
+a.icon-link {
+  margin-right: 5px;
+}

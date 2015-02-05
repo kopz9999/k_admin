@@ -1,0 +1,27 @@
+<%= render partial: 'content_helper' %>
+
+<% content_for :page_title do %>
+  <%= display_title "Show Item" do %>
+    <%= display_title_link edit_item_path(@item), "edit", "Edit" %>
+    <%= display_title_link items_path, "backward", "Back" %>
+  <% end %>
+<% end %>
+
+<%= display_panel do %>
+  <%= display_row_block do %>
+
+    <p id="notice"><%= notice %></p>
+
+    <p>
+      <strong>Name:</strong>
+      <%= @item.name %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @item.description %>
+    </p>
+
+  <% end %>
+
+<% end %>

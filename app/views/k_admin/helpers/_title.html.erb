@@ -1,0 +1,10 @@
+<!--BEGIN TITLE & BREADCRUMB PAGE-->
+<div class="page-header pull-left">
+    <div class="page-title"><%= title %></div>
+</div>
+<!--END TITLE & BREADCRUMB PAGE-->
+<% unless content.nil? %>
+  <ol class="breadcrumb page-breadcrumb pull-right">
+    <%= content %>
+  </ol>
+<% end %>

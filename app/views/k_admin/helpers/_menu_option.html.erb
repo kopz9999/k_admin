@@ -1,0 +1,8 @@
+<li class="<%= is_active ? 'active' : '' %>">
+  <%= link_to(url) do %>
+    <i class="fa fa-<%= icon %> fa-fw">
+      <div class="icon-bg bg-orange"></div>
+    </i>
+    <span class="menu-title"><%= title %></span>
+  <% end %>
+</li>

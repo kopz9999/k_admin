@@ -1,0 +1,14 @@
+<%= default_form_for(@item) do |f| %>
+
+  <%= f.form_body do %>
+    <%= f.default_field :name %>
+    <%= f.default_control :description do %>
+      <%= f.default_select :description, '<option value="1">Lisbon</option>'.html_safe %>
+    <% end %>
+  <% end %>
+
+  <%= f.default_form_actions do %>
+    <%= default_button 'Submit' %>
+  <% end %>
+
+<% end %>

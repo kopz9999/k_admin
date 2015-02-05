@@ -1,0 +1,46 @@
+<%= render partial: 'content_helper' %>
+
+<% content_for :page_title do %>
+  <%= display_title "Items" do %>
+    <%= display_title_link new_item_path, "plus", "New Item" %>
+  <% end %>
+<% end %>
+
+<%= display_panel do %>
+  <%= display_row_block do %>
+    <!--
+    <p id="notice"><%= notice %></p>
+    -->
+    <%= display_info_alert 'dw' %>
+  <% end %>
+  <%= display_row_block do %>
+
+    <table id='example' class="table table-striped table-bordered table-hover" cellspacing="0">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Description</th>
+          <th>&nbsp;</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @items.each do |item| %>
+          <tr>
+            <td><%= item.name %></td>
+            <td><%= item.description %></td>
+            <td>
+              <%= display_icon_link 'Show', item, 'bars' %>
+              <%= display_icon_link 'Edit', edit_item_path(item), 'edit' %>
+              <%= display_icon_link 'Destroy', item, 'times', method: :delete, data: { confirm: 'Are you sure?' } %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+  <% end %>
+
+<% end %>

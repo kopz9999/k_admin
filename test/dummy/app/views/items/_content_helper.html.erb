@@ -1,0 +1,52 @@
+<% content_for :app_logo do %>
+  Test App
+<% end %>
+
+<% content_for :application_menu do %>
+  <%= display_menu_option '#', 'home', 'Home', false %>
+  <%= display_menu_option '#', 'ticket', 'Tickets', true %>
+<% end %>
+
+<% content_for :top_right_options do %>
+  
+  <%= display_user_menu( '#', "k_admin/avatar-user.png", "John Doe" ) do %>
+    <%= display_list_option '#', 'user', 'My Profile' %>
+  <% end %>
+  
+<% end %>
+
+<% content_for :app_footer do %>
+  <a href="#">2014 © eDataWorld </a>
+<% end %>
+
+<% content_for :extra_stylesheets do %>
+  <%= stylesheet_link_tag 'application' %>
+<% end %>
+
+<% content_for :extra_scripts do %>
+  <%= javascript_include_tag "application" %>
+  <script type="text/javascript">
+    $(document).ready( function() {
+
+      $.fn.customDataTable = function() {
+        var tbl_ptr;
+        for (var i = 0; i < this.length; ++i) {
+          tbl_ptr = this.eq( i );
+          headers = tbl_ptr.find( '> thead > tr > th' );
+          tbl_ptr.dataTable({
+            "aoColumnDefs": [
+              { 'bSortable': false, 'aTargets': [ (headers.length - 1) ] }
+            ]
+          });
+        }
+        //$('#example').dataTable();
+      };
+
+    } );
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#example').customDataTable();
+    } );
+  </script>
+<% end %>
