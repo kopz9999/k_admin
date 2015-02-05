@@ -39,23 +39,6 @@ module KAdmin
       render(:template =>"k_admin/helpers/_user_menu.html.erb", :layout => nil , :locals => { url: url, avatar_url: avatar_url, user_name: user_name, :content => content }).to_s
     end    
 
-    def load_default_fonts
-      render(:template =>"k_admin/helpers/_fonts.html.erb", :layout => nil ).to_s
-    end
-
-    def load_default_stylesheets
-      stylesheet_link_tag 'k_admin', media: 'all', 'data-turbolinks-track' => true
-    end
-
-    def load_default_javascripts
-      javascript_include_tag 'k_admin', 'data-turbolinks-track' => true
-    end
-
-    def display_panel(&block)
-      content = capture(&block)
-      render(:template =>"k_admin/helpers/_panel.html.erb", :layout => nil , :locals => { :content => content }).to_s
-    end
-
     def display_row_block(&block)
       content = capture(&block)
       col_content = content_tag(:div, content, :class => "col-md-12")
@@ -70,6 +53,34 @@ module KAdmin
     def grid_columns_for_tag(content, column_width=1, column_offset=nil)
       offset_cls = column_offset.nil? ? "" : "col-md-offset-#{ column_offset }"
       content_tag(:div, content, :class => "#{offset_cls} col-md-#{ column_width }")
+    end
+
+    def login_container( &block )
+      content = capture( &block )
+      content_tag(:div, content, :id => :login )      
+    end
+
+    #Assets
+
+    def load_default_fonts
+      render(:template =>"k_admin/helpers/_fonts.html.erb", :layout => nil ).to_s
+    end
+
+    def load_default_stylesheets
+      stylesheet_link_tag 'k_admin', media: 'all', 'data-turbolinks-track' => true
+    end
+
+    def load_default_login_stylesheets
+      stylesheet_link_tag 'k_admin/login', media: 'all', 'data-turbolinks-track' => true
+    end
+
+    def load_default_javascripts
+      javascript_include_tag 'k_admin', 'data-turbolinks-track' => true
+    end
+
+    def display_panel(&block)
+      content = capture(&block)
+      render(:template =>"k_admin/helpers/_panel.html.erb", :layout => nil , :locals => { :content => content }).to_s
     end
 
     #Alerts helper

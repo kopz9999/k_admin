@@ -1,0 +1,21 @@
+/*
+  *= require k_admin/font-awesome.min.scss
+  *= require k_admin/login/reset.css
+  *= require k_admin/login/base.css
+*/
+
+#login h2 {
+  background-color: #1e1e1e;
+}
+
+body {
+  background-color: #3c3c3c;
+}
+
+#login fieldset input[type="submit"], #login fieldset input[type="submit"]:hover {
+  background-color: #3e77ab;
+}
+
+#login {
+  margin-top: 120px;
+}

@@ -1,0 +1,23 @@
+<%= login_container do %>
+
+  <h2>
+    <span class="fa fa-lock fa-fw"></span>Sign In
+  </h2>
+
+  <form action="javascript:void(0);" method="POST">
+
+    <fieldset>
+
+      <p><label for="email">E-mail address</label></p>
+      <p><input type="email" id="email" value="mail@address.com"></p> <!-- JS because of IE support; better: placeholder="mail@address.com" -->
+
+      <p><label for="password">Password</label></p>
+      <p><input type="password" id="password" value="password"></p> <!-- JS because of IE support; better: placeholder="password" -->
+
+      <p><input type="submit" value="Sign In"></p>
+
+    </fieldset>
+
+  </form>
+
+<% end %>

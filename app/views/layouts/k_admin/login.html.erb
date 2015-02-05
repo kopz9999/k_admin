@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> <%= t("app.name") %> </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <!-- Stylesheets -->
+    <% if content_for?(:custom_stylesheets) %>
+      <%= yield(:custom_stylesheets) %>
+    <% else %>
+      <%= load_default_login_stylesheets %>
+    <% end %>
+
+    <%= yield(:extra_stylesheets) %>
+
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <%= yield %>
+
+  </body>
+</html>
