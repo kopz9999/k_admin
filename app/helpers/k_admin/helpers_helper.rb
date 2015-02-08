@@ -28,9 +28,9 @@ module KAdmin
       link_to(icon.html_safe, link_parameter, options)
     end
 
-    def display_title_link( url, icon, title )
-      icon = content_tag(:i, '', :class => "fa fa-#{icon}")
-      anchor = content_tag(:a, "#{icon}&nbsp;#{title}".html_safe, :href => url )
+    def display_title_link( link_parameter, icon, title, options = {} )
+      icon_tag = content_tag(:i, '', :class => "fa fa-#{icon}")
+      anchor = link_to("#{icon_tag}&nbsp;#{title}".html_safe, link_parameter, options)
       content_tag(:li, "#{anchor}".html_safe)
     end
 
@@ -136,6 +136,10 @@ module KAdmin
       content_tag(:small, text, :class => "help-block")        
     end
 
+    def default_marker( text, label_type = 'info' )
+      content_tag(:span, text, :class => "label label-sm label-#{ label_type }")      
+    end
+
     module FormBuilder
 
       def form_body(options = {}, &block)
@@ -213,42 +217,6 @@ module KAdmin
       def default_text_field( method )
         text_field( method, :class => "form-control" )
       end
-
-=begin
-
-  CODE TO REMOVE
-  #Default field previous functionality:
-
-        label = default_label(method)
-        current_errs = @object.errors[method]
-        if current_errs.any?
-          err_tags = ""
-          input = default_input(method) do
-            current_errs.each do |err|
-              err_tags += @template.help_note_tag err
-            end
-            err_tags.html_safe
-          end
-          tag = "#{ label } #{ input }".html_safe
-          return @template.control_group_tag tag, :class => 'has-error'
-        else
-          input = default_input(method)
-          tag = "#{ label } #{ input }".html_safe
-          return @template.control_group_tag tag
-        end
-
-      def default_input(method, column_width=9, &block)
-        input_content = text_field( method, :class => "form-control" )
-        if block.nil?
-          tag = input_content
-        else
-          input_desc = @template.capture &block
-          input_desc_tag = @template.content_tag(:div, input_desc)
-          tag = "#{input_content} #{input_desc_tag}".html_safe
-        end
-        @template.grid_columns_for_tag( tag, column_width )
-      end
-=end
 
     end
 
