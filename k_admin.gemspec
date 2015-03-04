@@ -12,9 +12,9 @@ Gem::Specification.new do |s|
   s.homepage    = "http://bitbucket.org/kkyoto/"
   s.summary     = "Provides assets for KAdmin theme"
   s.description = "Provides assets for KAdmin theme as an engine, it includes a framework with js, css and images"
-  s.license     = "MIT"
+  s.license     = "GPL-2"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*", "GPLv2", "Rakefile", "README.rdoc"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", '~> 4.1', '>= 4.1.0'
