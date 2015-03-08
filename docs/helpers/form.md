@@ -37,7 +37,9 @@ Check the following example to understand how to use the form
         Please use the following helpers here:
         <ul>
           <li>
-            <b> Full controls </b> These controls are build with default_control and another explicit control helper.
+            <b> Full controls </b> 
+            <br/>
+            These controls are build with default_control and another explicit control helper already included.
             <ul>
               <li>
                 <b>default_field</b>
@@ -80,6 +82,8 @@ Check the following example to understand how to use the form
           </li>
           <li>
             <b> Explicit controls </b>
+            <br/>
+            These controls are the raw control in order for you to use it as you wish.            
             <ul>
 
               <li>

@@ -1,3 +1,4 @@
+You have the following optional content sections for the CMS: 
 
 ```erb
 

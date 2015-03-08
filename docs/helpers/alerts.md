@@ -8,7 +8,7 @@
   <li>
     Args:
     <ul>
-      <li>@text = Content for block </li>
+      <li>@text = Text for alert </li>
     </ul>
   </li>
 </ul>
@@ -21,7 +21,7 @@
   <li>
     Args:
     <ul>
-      <li>@text = Content for block </li>
+      <li>@text = Text for alert </li>
     </ul>
   </li>
 </ul>
@@ -34,7 +34,7 @@
   <li>
     Args:
     <ul>
-      <li>@text = Content for block </li>
+      <li>@text = Text for alert </li>
     </ul>
   </li>
 </ul>
@@ -47,7 +47,7 @@
   <li>
     Args:
     <ul>
-      <li>@text = Content for block </li>
+      <li>@text = Text for alert </li>
     </ul>
   </li>
 </ul>
