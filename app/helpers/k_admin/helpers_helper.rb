@@ -171,7 +171,7 @@ module KAdmin
         end
       end
 
-      def default_select_field(method, option_tags, opts = {}, options={})
+      def default_select_field(method, option_tags, opts = {})
         default_control(method, 9) do
           default_select(method, option_tags, opts)
         end
